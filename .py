@@ -29,7 +29,7 @@ def burbujeo(numeros):
         k = 0
         while k < n - i - 1:
             if numeros[k] > numeros[k + 1]:
-                # Intercambiar si el elemento actual es mayor que el siguiente
+                
                 numeros[k], numeros[k + 1] = numeros[k + 1], numeros[k]
                 intercambio = True
             k += 1
@@ -42,13 +42,13 @@ def calcular_promedio(numeros):
         print("Debe haber mínimo un número para calcular el promedio al descartar el mínimo y el máximo.")
         return
     
-    # Ordenar la lista usando el método de burbujeo
+    
     burbujeo(numeros)
     
     minimo = numeros[0]
     maximo = numeros[-1]
     
-    # Crear una nueva lista sin el mínimo y el máximo
+   
     numeros_medio = []
     i = 0
     while i < len(numeros):
@@ -74,4 +74,5 @@ def main():
     numeros = leer_nums()
     calcular_promedio(numeros)
 
-main()
+
+
