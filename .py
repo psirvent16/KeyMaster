@@ -9,28 +9,27 @@ def generar_contraseña(longitud=12):
     caracteres_disponibles = string.ascii_letters + string.digits + string.punctuation
     contraseña = ''.join(random.choice(caracteres_disponibles) for _ in range(longitud))
     return contraseña
+  
+  #Paso 2
 
-# Paso 2: Registrar usuario
+
 def registrar_usuario(nombre):
-    """
-    Registra un usuario con una contraseña generada aleatoriamente.
-    
-    :param nombre: Nombre del usuario
-    """
+   
     if nombre in usuarios_registrados:
         print(f"El usuario {nombre} ya está registrado.")
         return
     
-    # Genera una contraseña y registra al usuario
+    
     nueva_contraseña = generar_contraseña()
     usuarios_registrados[nombre] = (nombre, nueva_contraseña)
     print(f"Usuario {nombre} registrado correctamente con la contraseña: {nueva_contraseña}")
 
-# Paso 3: Mostrar usuarios registrados
+
+    #Paso 3
+
+
 def mostrar_usuarios():
-    """
-    Muestra todos los usuarios registrados y sus contraseñas.
-    """
+   
     if usuarios_registrados:
         print("Lista de usuarios registrados:")
         for usuario, (nombre, contraseña) in usuarios_registrados.items():
@@ -38,23 +37,23 @@ def mostrar_usuarios():
     else:
         print("No hay usuarios registrados.")
 
-# Paso 4: Contar usuarios registrados
+
+
+
+   #Paso 4
+
 def contar_usuarios():
-    """
-    Cuenta el número de usuarios registrados.
-    """
+    
     total = len(usuarios_registrados)
     print(f"Total de usuarios registrados: {total}")
     return total
 
-# Paso 5: Validar contraseña
+
+#Paso 5
+
+
 def validar_contraseña(contraseña):
-    """
-    Valida si una contraseña cumple con los requisitos de seguridad.
     
-    :param contraseña: La contraseña a validar
-    :return: True si es válida, False si no lo es
-    """
     if len(contraseña) < 8:
         print("La contraseña debe tener al menos 8 caracteres.")
         return False
@@ -68,14 +67,11 @@ def validar_contraseña(contraseña):
         print("La contraseña debe contener al menos un símbolo.")
         return False
     return True
+  #PASO 6
 
-# Paso 6: Mostrar información del usuario
+
 def mostrar_info_usuario(nombre):
-    """
-    Muestra la información detallada de un usuario específico.
-    
-    :param nombre: Nombre del usuario
-    """
+  
     if nombre in usuarios_registrados:
         _, contraseña = usuarios_registrados[nombre]
         print(f"Información del usuario {nombre}:")
@@ -83,11 +79,14 @@ def mostrar_info_usuario(nombre):
     else:
         print(f"Usuario {nombre} no encontrado.")
 
-# Paso 7: Función principal
+
+        #PASO 7
+        
+
+
 def main():
-    """
-    Función principal para interactuar con el programa.
-    """
+    
+    
     while True:
         print("\nMenú de opciones:")
         print("1. Registrar un nuevo usuario")
@@ -121,6 +120,8 @@ def main():
         else:
             print("Opción no válida, por favor intenta de nuevo.")
 
-# Ejecuta la función principal
 if __name__ == "__main__":
     main()
+
+
+ 
